@@ -11,7 +11,7 @@ defmodule WhiteBreadContext do
     %{}
   end
   scenario_finalize fn _status, _state -> 
-    # Hound.end_session
+    #Hound.end_session
     Nil
   end
 
