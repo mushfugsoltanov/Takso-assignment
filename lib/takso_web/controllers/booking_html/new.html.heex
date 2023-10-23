@@ -1,6 +1,16 @@
-<form action="/bookings">
-<input id="pickup_address">
-<input id="dropoff_address">
-<button id="submit_button">Submit</button>
+<form method="POST" action="/bookings">
+        <input id="_csrf_token" name="_csrf_token" type="hidden" />
 
-</form>
+        <label for="booking[pickup_address]">Pickup</label>
+        <input name="booking[pickup_address]" id="pickup_address"/>
+
+        <label for="booking[dropoff_address]">Dropoff</label>
+        <input name="booking[dropoff_address]" id="dropoff_address"/>
+        
+        <button id="submit_button">Create</button>
+    </form>
+
+    <script>
+        const csrf = "<%= Phoenix.Controller.get_csrf_token() %>";
+        document.getElementById("_csrf_token").value = csrf;
+    </script>
