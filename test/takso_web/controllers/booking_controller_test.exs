@@ -1,6 +1,5 @@
-defmodule Takso.BookingControllerTest do
+defmodule TaksoWeb.BookingControllerTest do
   use TaksoWeb.ConnCase
-
   alias Takso.{Repo,Sales.Taxi}
 
   test "Booking rejection", %{conn: conn} do
@@ -17,3 +16,5 @@ defmodule Takso.BookingControllerTest do
     assert html_response(conn, 200) =~ ~r/Your taxi will arrive in \d+ minutes/
   end
 end
+
+
